@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Message</title>
+    <style>
+        body {
+            background-color: gold;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: black;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Fade-in and fade-out animation for the image */
+        .image-container {
+            margin-top: 20px;
+            animation: fadeEffect 4s infinite alternate;
+        }
+
+        .image-container img {
+            width: 350px; /* Enlarged image */
+            height: auto;
+        }
+
+        @keyframes fadeEffect {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+
+        .message-container {
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .typing-text {
+            display: inline-block;
+            white-space: pre-wrap;
+            overflow: hidden;
+            border-right: 3px solid black;
+            font-size: 16px;
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img src="venkateswara.gif" alt="Lord Venkateswara Swamy">
+    </div>
+
+    <div class="message-container">
+        <h2>Om Namo Venkatesaya Namaha 💖</h2>
+        <p class="typing-text" id="typing-text"></p>
+    </div>
+
+    <script>
+        const message = `Hey nanna, idhe date roju 2 months back nen ninnu chusanu ah roju inka nak gurtundi ivala nen happy gane unna nee valla but nv lev
+
+ninna kuda nv dull gane unnav, ah dullness ni pogottadaniki ivala kuda idhi naa chinni prayatnam....
+
+nek nachutundi ani anukuntuna kanisam dheeni chusi aina nv happy ga feel aithe adhe chaalu nanna naaku..
+
+edhi emaina nen naa life lo nv mathrame undali asha paduthunna...
+
+I LOVE YOU, and I always will 💙🐻 
+
+naa kosam okasari navvochu ga nanna plzz...manam ippati nundi happy ga undali ani ah VENKATESWARA SWAMY ni manaspurthiga korukuntunnanu`;
+
+        const textElement = document.getElementById("typing-text");
+        let index = 0;
+
+        function typeText() {
+            if (index < message.length) {
+                textElement.innerHTML += message.charAt(index);
+                index++;
+                setTimeout(typeText, message.charAt(index - 1) === " " ? 150 : 80); // Slower for spaces
+            }
+        }
+
+        window.onload = typeText;
+    </script>
+
+</body>
+</html>
